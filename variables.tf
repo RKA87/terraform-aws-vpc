@@ -55,13 +55,31 @@ variable "public_subnet_tags" {
   default     = {}
 }
 
+variable "pub_subnet_tags" {
+  description = "Additional tags to apply to the public subnets."
+  type        = map(string)
+  default     = {}
+}
+
 variable "private_subnet_tags" {
   description = "Additional tags to apply to the private subnets."
   type        = map(string)
   default     = {}
 }
 
+variable "priv_subnet_tags" {
+  description = "Additional tags to apply to the private subnets."
+  type        = map(string)
+  default     = {}
+}
+
 variable "database_subnet_tags" {
+  description = "Additional tags to apply to the database subnets."
+  type        = map(string)
+  default     = {}
+}
+
+variable "db_subnet_tags" {
   description = "Additional tags to apply to the database subnets."
   type        = map(string)
   default     = {}
