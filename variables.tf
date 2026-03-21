@@ -24,3 +24,9 @@ variable "vpc_cidr_block" {
   type        = string
   default     = "10.0.0.0/16"
 }
+
+variable "igw_tags" {
+  description = "Additional tags to apply to the Internet Gateway."
+  type        = map(string)
+  default     = {}
+}
