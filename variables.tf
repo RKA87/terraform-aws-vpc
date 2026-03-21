@@ -37,8 +37,32 @@ variable "public_subnet_cidr_block" {
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
-# variable "availability_zone" {
-#   description = "The availability zone for the public subnet."
-#   type        = string
-#   default     = "us-west-2a"
-# }
+variable "private_subnet_cidr_block" {
+  description = "The CIDR block for the private subnet."
+  type        = list(string)
+  default     = ["10.0.11.0/24", "10.0.12.0/24"]
+}
+
+variable "database_subnet_cidr_block" {
+  description = "The CIDR block for the database subnet."
+  type        = list(string)
+  default     = ["10.0.21.0/24", "10.0.22.0/24"]
+}
+
+variable "public_subnet_tags" {
+  description = "Additional tags to apply to the public subnets."
+  type        = map(string)
+  default     = {}
+}
+
+variable "private_subnet_tags" {
+  description = "Additional tags to apply to the private subnets."
+  type        = map(string)
+  default     = {}
+}
+
+variable "database_subnet_tags" {
+  description = "Additional tags to apply to the database subnets."
+  type        = map(string)
+  default     = {}
+}
