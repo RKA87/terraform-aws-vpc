@@ -151,7 +151,7 @@ resource "aws_route_table_association" "database" {
 # create NAT Gateway for private subnets and database subnets in one availability zone of public subnet
 
 resource "aws_eip" "elastic_ip" {
-  domain = aws_vpc.main.id
+  domain = "vpc"
 }
 
 resource "aws_nat_gateway" "nat" {
