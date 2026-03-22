@@ -3,6 +3,11 @@ output "vpc_id" {
   value       = aws_vpc.main.id
 }
 
+output "igw_id" {
+  description = "The ID of the created Internet Gateway."
+  value       = aws_internet_gateway.main.id
+}
+
 output "availability_zones" {
   value = data.aws_availability_zones.all_available_zones.names
   }
