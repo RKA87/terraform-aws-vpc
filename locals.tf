@@ -23,4 +23,6 @@ locals {
 
   database_subnet_final_tags = merge(local.common_tags, var.database_subnet_tags)
 
+  az_zones = slice(data.aws_availability_zones.all_available_zones.names, 0,2)
+
 }
