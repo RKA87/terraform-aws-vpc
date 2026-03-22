@@ -25,4 +25,10 @@ locals {
 
   az_zones = slice(data.aws_availability_zones.all_available_zones.names, 0,2)
 
+  nat_final_tags = merge(local.common_tags, var.nat_gw_tags,
+     {
+      Name = "${var.project}-${var.environment}-nat-gw"
+     }
+  )
+
 }

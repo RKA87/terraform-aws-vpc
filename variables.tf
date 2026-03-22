@@ -61,3 +61,9 @@ variable "database_subnet_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "nat_gw_tags" {
+  description = "Additional tags to apply to the NAT Gateway."
+  type        = map(string)
+  default     = {}
+}

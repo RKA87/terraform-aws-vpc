@@ -26,3 +26,24 @@ output "database_subnet_ids" {
   description = "The IDs of the database subnets."
   value       = aws_subnet.database[*].id
 }
+
+output "nat_gw_id" {
+  description = "The ID of the created NAT Gateway."
+  value       = aws_nat_gateway.nat.id
+}
+
+output "public_route_table_id" {
+  description = "The ID of the created Route Table."
+  value       = aws_route_table.public.id
+}
+
+output "private_route_table_id" {
+  description = "The ID of the created Route Table."
+  value       = aws_route_table.private.id
+}
+
+output "database_route_table_id" {
+  description = "The ID of the created Route Table."
+  value       = aws_route_table.database.id
+}
+
