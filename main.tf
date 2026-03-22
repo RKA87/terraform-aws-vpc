@@ -46,8 +46,28 @@ resource "aws_subnet" "public"{
   count = length(var.public_subnet_cidr_block)
   vpc_id = aws_vpc.main.id
   cidr_block = "${var.public_subnet_cidr_block[count.index]}"
-  availability_zone = "${local.az_zones[count.index]}"
+  availability_zone = local.az_zones[count.index]
   tags = merge(local.public_subnet_final_tags, {
-    Name = "${var.project}-${var.environment}-public-subnet-${count.index}"
+    Name = "${var.project}-${var.environment}-public-subnet-${local.az_zones[count.index]}"
+  })
+}
+
+resource "aws_subnet" "private"{
+  count = length(var.private_subnet_cidr_block)
+  vpc_id = aws_vpc.main.id
+  cidr_block = "${var.private_subnet_cidr_block[count.index]}"
+  availability_zone = local.az_zones[count.index]
+  tags = merge(local.private_subnet_final_tags, {
+    Name = "${var.project}-${var.environment}-private-subnet-${local.az_zones[count.index]}"
+  })
+}
+
+resource "aws_subnet" "database"{
+  count = length(var.database_subnet_cidr_block)
+  vpc_id = aws_vpc.main.id
+  cidr_block = "${var.database_subnet_cidr_block[count.index]}"
+  availability_zone = local.az_zones[count.index]
+  tags = merge(local.database_subnet_final_tags, {
+    Name = "${var.project}-${var.environment}-database-subnet-${local.az_zones[count.index]}"
   })
 }

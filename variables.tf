@@ -1,8 +1,3 @@
-variable "region" {
-  description = "The AWS region to create resources in."
-  type        = string
-}
-
 variable "environment" {
   description = "The environment for which to create resources (e.g., dev, staging, prod)."
   type        = string
