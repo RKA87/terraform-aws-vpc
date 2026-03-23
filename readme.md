@@ -35,27 +35,31 @@ module "roboshop_vpc" {
 # Inputs
 These are variable inputs to pass-on during deployment
 
-- environment (Required) variable in a string type like Dev, UAT, Test, Prod
-- project (Required) variable in a string type about the project
-- Following variables are optional
-  - vpc_cidr_block variable in list(string) type
-  - vpc_tags variable in map(string) type
-  - igw_tags variable in map(string) type
-  - public_subnet_cidr_block variable in list(string) type
-  - private_subnet_cidr_block variable in list(string) type
-  - database_subnet_cidr_block variable in list(string) type
-  - public_subnet_tags variable in map(string) type
-  - private_subnet_tags variable in map(string) type
-  - database_subnet_tags variable in map(string) type
+| Name | Type | Required | Description |
+|:-----|:-----|:--------:|:------------|
+| environment | string | Yes | Environment name like Dev, UAT, Test, Prod |
+| project | string | Yes | Project name |
+| vpc_cidr_block | list(string) | Optional | VPC CIDR block |
+| vpc_tags | map(string) | Optional | Tags for VPC |
+| igw_tags | map(string) | Optional | Tags for Internet Gateway |
+| public_subnet_cidr_block | list(string) | Optional | Public subnet CIDR blocks |
+| private_subnet_cidr_block | list(string) | Optional | Private subnet CIDR blocks |
+| database_subnet_cidr_block | list(string) | Optional | Database subnet CIDR blocks |
+| public_subnet_tags | map(string) | Optional | Tags for public subnets |
+| private_subnet_tags | map(string) | Optional | Tags for private subnets |
+| database_subnet_tags | map(string) | Optional | Tags for database subnets |
 
 # Outputs
-- vpc_id - The ID of the VPC
-- igw_id - The ID of Internet Gateway
-- availabilityzones - AZ Info
-- public_subnet_ids - Public Subent ID's
-- private_subnet_ids - Private Subent ID's
-- database_subnet_ids - Database Subent ID's
-- nat_gw_id - ID of NAT Gateway
-- public_route_table_id - Public Route Table ID
-- private_route_table_id - Private Route Table ID
-- database_route_table_id - Database Route Table ID
+
+| Name | Description |
+|:-----|:------------|
+| vpc_id | The ID of the VPC |
+| igw_id | The ID of Internet Gateway |
+| availabilityzones | AZ Info |
+| public_subnet_ids | Public Subnet ID's |
+| private_subnet_ids | Private Subnet ID's |
+| database_subnet_ids | Database Subnet ID's |
+| nat_gw_id | ID of NAT Gateway |
+| public_route_table_id | Public Route Table ID |
+| private_route_table_id | Private Route Table ID |
+| database_route_table_id | Database Route Table ID |
