@@ -7,7 +7,6 @@ A Terraform Moudle to create a new
 - Route Table (Routes) for Public, Private and Database Subnets
 
 ## Usage
-Usage
 
 module "roboshop_vpc" {
   source = "git::https://github.com/RKA87/terraform-aws-vpc?ref=main"
@@ -23,16 +22,16 @@ module "roboshop_vpc" {
 
 # Features
 
-VPC with configurable CIDR block and DNS hostname support
-Public, private, and database subnet tiers across multiple Availability Zones
-Internet Gateway for public subnets
-NAT Gateway (with Elastic IP) for private and database subnet outbound access
-Separate route tables for each subnet tier
-Optional VPC peering support flag
-Fully customizable tags on every resource
+- VPC with configurable CIDR block and DNS hostname support
+- Public, private, and database subnet tiers across multiple Availability Zones
+- Internet Gateway for public subnets
+- NAT Gateway (with Elastic IP) for private and database subnet outbound access
+- Separate route tables for each subnet tier
+- Optional VPC peering support flag
+- Fully customizable tags on every resource
 
 # Inputs
-These are variable inputs
+These are variable inputs to pass-on during deployment
 
 - environment (Required) variable in a string type like Dev, UAT, Test, Prod
 - project (Required) variable in a string type about the project
@@ -48,13 +47,13 @@ These are variable inputs
   - database_subnet_tags variable in map(string) type
 
 # Outputs
-vpc_id - The ID of the VPC
-igw_id - The ID of Internet Gateway
-availabilityzones - AZ Info
-public_subnet_ids - Public Subent ID's
-private_subnet_ids - Private Subent ID's
-database_subnet_ids - Database Subent ID's
-nat_gw_id - ID of NAT Gateway
-public_route_table_id - Public Route Table ID
-private_route_table_id - Private Route Table ID
-database_route_table_id - Database Route Table ID
+- vpc_id - The ID of the VPC
+- igw_id - The ID of Internet Gateway
+- availabilityzones - AZ Info
+- public_subnet_ids - Public Subent ID's
+- private_subnet_ids - Private Subent ID's
+- database_subnet_ids - Database Subent ID's
+- nat_gw_id - ID of NAT Gateway
+- public_route_table_id - Public Route Table ID
+- private_route_table_id - Private Route Table ID
+- database_route_table_id - Database Route Table ID
