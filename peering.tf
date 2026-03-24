@@ -3,6 +3,7 @@ resource "aws_vpc_peering_connection" "this" {
 
   vpc_id      = aws_vpc.main.id             #roboshop-vpc (requestor)
   peer_vpc_id = data.aws_vpc.default_vpc.id #aws default vpc (accepter)
+  auto_accept = true
   # peer_owner_id = var.peer_owner_id
   accepter {
     allow_remote_vpc_dns_resolution = true
