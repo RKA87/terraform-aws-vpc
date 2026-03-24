@@ -26,7 +26,7 @@ resource "aws_vpc_peering_connection" "this" {
 # }
 
 # Route from requester(roboshop vpc) roboshop public route table to accepter(aws default vpc)
-resource "aws_route" "requester_to_accepter" {
+resource "aws_route" "roboshop_public_to_accepter" {
   count = var.create_peering ? 1 : 0
 
   route_table_id            = aws_route_table.public.id
@@ -35,7 +35,7 @@ resource "aws_route" "requester_to_accepter" {
 }
 
 # Route from requester(roboshop vpc) roboshop private route table to accepter(aws default vpc)
-resource "aws_route" "requester_to_accepter" {
+resource "aws_route" "roboshop_private_to_accepter" {
   count = var.create_peering ? 1 : 0
 
   route_table_id            = aws_route_table.private.id
@@ -44,7 +44,7 @@ resource "aws_route" "requester_to_accepter" {
 }
 
 # Route from requester(roboshop vpc)  roboshop database route table to accepter(aws default vpc)
-resource "aws_route" "requester_to_accepter" {
+resource "aws_route" "roboshop_database_to_accepter" {
   count = var.create_peering ? 1 : 0
 
   route_table_id            = aws_route_table.database.id
