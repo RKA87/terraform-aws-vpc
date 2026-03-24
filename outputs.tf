@@ -47,3 +47,8 @@ output "database_route_table_id" {
   value       = aws_route_table.database.id
 }
 
+# Peering Connection Outputs
+output "peering_connection_id" {
+  description = "The ID of the created VPC Peering Connection."
+  value       = "${aws_vpc_peering_connection.this[0].id}"
+}

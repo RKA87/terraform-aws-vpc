@@ -67,3 +67,17 @@ variable "nat_gw_tags" {
   type        = map(string)
   default     = {}
 }
+
+# Peering VPC Variables
+
+variable "create_peering" {
+  description = "Whether to create a VPC peering connection."
+  type        = bool
+  default     = false
+}
+
+variable "peering_tags"{
+  description = "Additional tags to apply to the VPC peering connection."
+  type        = map(string)
+  default     = {}
+}

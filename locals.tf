@@ -1,7 +1,7 @@
 locals {
   common_tags = {
-    Environment = var.environment
-    Project     = var.project
+    Environment = "${var.environment}"
+    Project     = "${var.project}"
     Deployment  = "terraform"
   }
 
@@ -29,6 +29,12 @@ locals {
      {
       Name = "${var.project}-${var.environment}-nat-gw"
      }
+  )
+
+    peering_final_tags = merge(local.common_tags, var.peering_tags,
+    {
+      Name = "${var.project}-${var.environment}-peering"
+    }
   )
 
 }
