@@ -56,7 +56,7 @@ resource "aws_route" "roboshop_database_to_accepter" {
 resource "aws_route" "accepter_to_requester" {
   count = var.create_peering ? 1 : 0
 
-  route_table_id            = data.aws_vpc.default_vpc.default_route_table_id
+  route_table_id            = data.aws_route_table.default_route_table.id
   destination_cidr_block    = aws_vpc.main.cidr_block
   vpc_peering_connection_id = "${aws_vpc_peering_connection.this[0].id}"
 }
