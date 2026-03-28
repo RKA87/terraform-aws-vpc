@@ -50,5 +50,5 @@ output "database_route_table_id" {
 # Peering Connection Outputs
 output "peering_connection_id" {
   description = "The ID of the created VPC Peering Connection."
-  value       = "${aws_vpc_peering_connection.this[0].id}"
+  value       = var.create_peering ? "${aws_vpc_peering_connection.this[0].id}" : ""
 }
